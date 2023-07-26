@@ -1,1 +1,22 @@
 @import "semantic-ui";
+
+
+.chatbox{
+    height: 450px;
+}
+.submit-label{
+    background-color: black;
+}
+.chat-icon{
+    padding: 5px 0px;
+}
+.user_message{
+    padding: 10px;
+    color: white;
+    background-color: #72b672;
+    display: inline-block;
+    margin: 3px 4px;
+    border-radius: 11px;
+    position: absolute;
+    right: 4px;
+}

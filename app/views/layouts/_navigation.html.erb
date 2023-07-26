@@ -1,4 +1,5 @@
-<a class="active item">
+<%= link_to "Chatroom", root_path, class: "active item" %>
+<a class="item">
     Chats
 </a>
 <a class="item">
@@ -8,12 +9,17 @@
     <div class="ui dropdown item">
         Profile <i class="dropdown icon"></i>
     <div class="menu">
-        <a class="item">Login</a>
-        <a class="item">Logout</a>
+    <% if logged_in? %>
+    <%= link_to "Logout", logout_path,method: :delete,data: { confirm: 'Are you sure?' }, class: "item" %>
+    <% else %>
+        <%= link_to "Login", login_path, class: "item" %>
         <a class="item">Sign Up</a>
+    <%end%>
     </div>
 </div>
-<div class="item">
-    <div class="ui primary button">Sign Up</div>
-</div>
+<% if !logged_in? %>
+    <div class="item">
+    <%= link_to "Login", login_path, class: "item " %>
+    </div>
+    <%end%>
 </div>

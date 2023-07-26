@@ -1,1 +1,48 @@
-<h1>Hello world!</h1>
+<h2 class="ui center aligned icon header">
+  <i class="circular inverted green users icon"></i>
+  Chats
+</h2>
+
+<div class="ui two column grid">
+    <div class="four wide column">
+        <div class="ui fluid raised card chatbox">
+            <div class="content">
+                <div class="ui vertical menu">
+                    <a class="active item green">
+                        Home
+                    </a>
+                    <a class="item">
+                        Messages
+                    </a>
+                    <a class="item">
+                        Friends
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="twelve wide column">
+        <div class="ui small feed">
+            <div class="ui fluid raised card chatbox">
+                <div class="content">
+                    <div class="ui feed">
+                        <%= render @messages %>
+                    </div>
+                </div>
+                <div class="extra content">
+                    <form class="ui reply form">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <input type="text" placeholder="Search users...">
+                                <i class="users icon active green"></i>
+                                <div class="ui submit submit-label labeled icon" style="cursor: pointer">
+                                    <i class="location circle arrow green large chat-icon icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

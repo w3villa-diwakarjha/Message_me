@@ -14,11 +14,12 @@
   <body>
   <div class="ui small inverted menu">
     <div class="ui container">
-    <%=render 'layouts/navigation.html.erb' %>
+    <%=render 'layouts/navigation' %>
   </div>
 </div>
-<div class="ui container">
+  <div class="ui container">
+  <%= render 'layouts/messages' %>
     <%= yield %>
-</div>
+  </div>
   </body>
 </html>
