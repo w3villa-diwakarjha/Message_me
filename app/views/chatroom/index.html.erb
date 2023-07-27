@@ -24,23 +24,23 @@
     <div class="twelve wide column">
         <div class="ui small feed">
             <div class="ui fluid raised card chatbox">
-                <div class="content">
-                    <div class="ui feed">
+                <div class="content" id="message-overflow">
+                    <div class="ui feed" id="message-container">
                         <%= render @messages %>
                     </div>
                 </div>
                 <div class="extra content">
-                    <form class="ui reply form">
+                    <%=form_for(@message, html: {class: "ui reply form", role: "form"}, url: message_path,remote: true) do |f| %>
                         <div class="field">
                             <div class="ui left icon input">
-                                <input type="text" placeholder="Search users...">
+                            <%= f.text_field :body, placeholder: "Type Here..."%>
                                 <i class="users icon active green"></i>
-                                <div class="ui submit submit-label labeled icon" style="cursor: pointer">
-                                    <i class="location circle arrow green large chat-icon icon"></i>
+                                <div class="ui submit icon" style="cursor: pointer">
+                                    <%= f.button '<i class="location circle arrow green large chat-icon icon"></i>'.html_safe, class: "button_design"%>
                                 </div>
                             </div>
                         </div>
-                    </form>
+                    <%end%>
                 </div>
             </div>
         </div>
